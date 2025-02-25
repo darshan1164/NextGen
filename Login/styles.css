@@ -1,124 +1,152 @@
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6d4c41, #3e2723);
+    overflow: hidden;
 }
 
-/* Background Image with Overlay */
-body::before {
-    content: '';
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/Images/acoffeewithacroissant1.PNG') no-repeat center center fixed;
-    background-size: cover;
-    opacity: 0.8; /* 50% transparent background image */
-    filter: blur(4px); /* Apply blur effect */
-    z-index: -1
+    background: url('cafe-background.jpg') no-repeat center center/cover;
+    opacity: 0.3;
+    z-index: -1;
 }
 
-/* Container */
-.container {
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for the container */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px; /* Set a fixed width */
-    height: 400px; /* Set a fixed height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Form Container */
-#form-container {
-    width: 100%;
-    max-width: 400px;
-}
-
-/* Form Box */
-#login-box, #signup-box {
-    background-color: transparent; /* Transparent background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.form-box {
+    padding: 40px;
     text-align: center;
-    margin: 20px 0;
+    color: #fff;
+    animation: slideIn 0.5s ease-in-out;
 }
 
 h2 {
-    color: #804b41;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* User Box */
+p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
 .user-box {
     position: relative;
     margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .user-box input {
     width: 100%;
     padding: 10px 0;
-    font-size: 16px;
-    color: #3e2723;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #fff;
     border: none;
-    border-bottom: 2px solid #3e2723;
+    border-bottom: 2px solid #fff;
     outline: none;
     background: transparent;
+    transition: border-color 0.3s ease;
+}
+
+.user-box input:focus {
+    border-bottom-color: #ffab91;
 }
 
 .user-box label {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #3e2723;
+    font-size: 1rem;
+    color: #fff;
     pointer-events: none;
     transition: 0.5s;
 }
 
-.user-box input:focus ~ label, .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #ff6f61;
-    font-size: 12px;
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+    top: -15px;
+    font-size: 0.8rem;
+    color: #ffab91;
 }
 
-/* Button Styles */
 button {
-    background-color: rgb(114,78,44);
-    color: #fff;
-    padding: 10px 20px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #3e2723;
+    background: #ffab91;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 2.5s ease-in-out;
 }
 
 button:hover {
-    background-color: rgb(39,19,0);
+    background: #ff8a65;
+    transform: scale(1.05);
 }
 
-/* Links */
-a {
-    color: #ff6f61;
+.toggle-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.toggle-text a {
+    color: #ffab91;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
-    color: rgb(39,19,0);
+.toggle-text a:hover {
+    color: #ff8a65;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

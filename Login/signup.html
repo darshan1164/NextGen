@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe Sign Up</title>
+    <link rel="stylesheet" href="/Login/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="background"></div>
+      <!-- Sign Up Form -->
+      <div id="signup-box" class="form-box">
+        <h2>Join Us!</h2>
+        <p>Create a new account</p>
+        <form id="signupForm">
+          <div class="user-box">
+            <input type="text" name="username" required />
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password" required />
+            <label>Password</label>
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p class="toggle-text">
+          Already have an account? <a href="/Login/index.html" id="show-login">Login</a>
+        </p>
+      </div>
+    </div>
+    <script src="/Login/scripts.js"></script>
+  </body>
+</html>
