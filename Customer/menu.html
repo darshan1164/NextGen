@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu and Cart Page</title>
+    <link rel="stylesheet" href="/Customer/menu.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Our Menu</h1>
+      <button id="toggle-mode" onclick="toggleMode()">Switch to Dark Mode</button>
+      <div id="menu-items">
+        <!-- Menu items with images -->
+        <div class="menu-item" data-name="Burger" data-price="100">
+          <img src="/Images/burger.png" alt="Burger" class="menu-item-image" />
+          <h3>Burger - ₹100.00</h3>
+          
+          <button class="add-to-cart" onclick="addToCart(this)">
+            Add to Cart
+          </button>
+          <button
+            onclick="viewAR('https://mywebar.com/p/Project_2_ixqubi0cat')">
+            View in AR
+          </button>
+        </div>
+        <div class="menu-item" data-name="Pizza" data-price="299">
+          <img src="/Images/pizza.png" alt="Pizza" class="menu-item-image" />
+          <h3>Pizza - ₹299.00</h3>
+          
+          <button class="add-to-cart" onclick="addToCart(this)">
+            Add to Cart
+          </button>
+          <button
+            onclick="viewAR('https://mywebar.com/p/Project_2_guef5iaf5g')">
+            View in AR
+          </button>
+        </div>
+        <div class="menu-item" data-name="Donut" data-price="100">
+          <img src="/Images/donut.png" alt="Donut" class="menu-item-image" />
+          <h3>Donut - ₹100.00</h3>
+          
+          <button class="add-to-cart" onclick="addToCart(this)">
+            Add to Cart
+          </button>
+          <button
+            onclick="viewAR('https://mywebar.com/p/Project_3_vmlumf8e8z')">
+            View in AR
+          </button>
+        </div>
+        <div class="menu-item" data-name="Milk Shake" data-price="150">
+          <img
+            src="/Images/milkshake.png"
+            alt="MilkShake"
+            class="menu-item-image" />
+          <h3>Milk Shake - ₹150.00</h3>
+          
+          <button class="add-to-cart" onclick="addToCart(this)">
+            Add to Cart
+          </button>
+          <button
+            onclick="viewAR('https://mywebar.com/p/Project_4_cevazoom8a')">
+            View in AR
+          </button>
+        </div>
+      </div>
+      <!-- Cart page -->
+      <h1>Your Cart</h1>
+      <div id="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div id="total-price">
+        <!-- Total price will be displayed here -->
+      </div>
+      <button class="proceed-to-order" onclick="proceedToOrder()">
+        Proceed to Order
+      </button>
+      <button class="back-button" onclick="window.history.back()">Back</button>
+    </div>
+    <script src="/Customer/menu.js"></script>
+  </body>
+</html>

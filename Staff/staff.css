@@ -1,0 +1,26 @@
+/* Order item styles */
+.order {
+    background: rgba(255, 255, 255, 0.5); /* 50% transparency */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 10px;
+}
+
+.order-content h3 {
+    margin: 10px 0;
+    color: #4b3832;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+.order-content p {
+    margin: 5px 0;
+    color: #777;
+    font-size: 0.9em;
+}
