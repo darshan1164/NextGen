@@ -7,76 +7,61 @@
 }
 
 body {
+    background: #f5e6cc; /* Warm beige background */
+    color: #4a2c2a; /* Dark brown for text */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #6d4c41, #3e2723);
-    overflow: hidden;
-}
-
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
     animation: fadeIn 1s ease-in-out;
 }
 
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     width: 100%;
-    height: 100%;
-    background: url('cafe-background.jpg') no-repeat center center/cover;
-    opacity: 0.3;
-    z-index: -1;
+    max-width: 400px;
+    animation: slideIn 0.5s ease-in-out;
 }
 
-.form-box {
-    padding: 40px;
+#form-container {
+    position: relative;
+    width: 100%;
+}
+
+#login-box, #signup-box {
     text-align: center;
-    color: #fff;
-    animation: slideIn 0.5s ease-in-out;
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-p {
-    font-size: 0.9rem;
+    color: #c56e33; /* Warm orange for headings */
     margin-bottom: 20px;
-    animation: fadeIn 1.5s ease-in-out;
+    animation: float 3s ease-in-out infinite;
 }
 
 .user-box {
     position: relative;
     margin-bottom: 30px;
-    animation: fadeIn 2s ease-in-out;
 }
 
 .user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 1rem;
-    color: #fff;
+    color: #4a2c2a; /* Dark brown for text */
     border: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #c56e33; /* Warm orange border */
     outline: none;
     background: transparent;
     transition: border-color 0.3s ease;
 }
 
 .user-box input:focus {
-    border-bottom-color: #ffab91;
+    border-bottom-color: #a85829; /* Darker orange on focus */
 }
 
 .user-box label {
@@ -84,7 +69,7 @@ p {
     top: 10px;
     left: 0;
     font-size: 1rem;
-    color: #fff;
+    color: #c56e33; /* Warm orange for labels */
     pointer-events: none;
     transition: 0.5s;
 }
@@ -93,41 +78,44 @@ p {
 .user-box input:valid ~ label {
     top: -15px;
     font-size: 0.8rem;
-    color: #ffab91;
+    color: #a85829; /* Darker orange for focused/valid labels */
 }
 
 button {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
-    color: #3e2723;
-    background: #ffab91;
+    color: #fff;
+    background-color: #c56e33; /* Warm orange for buttons */
     border: none;
-    border-radius: 5px;
+    border-radius: 25px; /* Rounded corners */
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-    animation: fadeIn 2.5s ease-in-out;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 button:hover {
-    background: #ff8a65;
+    background-color: #a85829; /* Darker orange on hover */
     transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.toggle-text {
+p {
     margin-top: 20px;
     font-size: 0.9rem;
-    animation: fadeIn 3s ease-in-out;
+    color: #4a2c2a; /* Dark brown for text */
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.toggle-text a {
-    color: #ffab91;
+p a {
+    color: #c56e33; /* Warm orange for links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.toggle-text a:hover {
-    color: #ff8a65;
+p a:hover {
+    color: #a85829; /* Darker orange on hover */
 }
 
 /* Animations */
@@ -148,5 +136,28 @@ button:hover {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
     }
 }
